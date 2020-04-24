@@ -44,11 +44,16 @@ function clickHandler (eventClicks){
         Products.allProducts[i].counter++
       }
     }
+    // localStorage.setItem('Products', Products.clicks);
+    // console.log(Products.allProducts);
+    // console.log(Products.clicks);
+
 
     newImgRender();
   } else if (Products.clicks === Products.maxClicks){
     makeChart()
   }
+
 }
 
 var displayImgs = 3;
@@ -161,4 +166,8 @@ function makeChart(){
   }
   
 
+  localStorage.setItem('Products', Products.allProducts);
+  var stringyProducts = JSON.stringify(Products.allProducts);
+  console.log('stringy products', stringyProducts);
+  
 
